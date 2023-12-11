@@ -44,7 +44,7 @@ jobs:
 
     - name: Notify on build failure
       if: failure()
-      uses: Ilshidur/action-slack@master
+      uses: Ilshidur/action-slack@2.0.2
       with:
         status: failure
         fields: repo,message,commit,author
@@ -53,7 +53,7 @@ jobs:
 
     - name: Notify on build success
       if: success()
-      uses: Ilshidur/action-slack@master
+      uses: Ilshidur/action-slack@2.0.2
       with:
         status: success
         fields: repo,message,commit,author
