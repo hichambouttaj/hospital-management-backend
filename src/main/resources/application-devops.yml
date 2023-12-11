@@ -1,0 +1,25 @@
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 200MB
+      max-request-size: 200MB
+
+#Database
+MYSQL_SQL_USERNAME: root
+MYSQL_SQL_PASSWORD: root
+MYSQL_SQL_HOST: localhost
+MYSQL_SQL_PORT: 3306
+MYSQL_SQL_DB: gestion_hopital_db
+
+#Serverb
+SERVER_PORT: 8080
+
+#JWT TOKEN
+JWT_TOKEN_SECRET: 66546A576E5A7234753778214125442A472D4B614E645267556B587032733576
+JWT_ACCESS_TOKEN_EXPIRATION: 300000 # 5 minute 5 * 60 * 1000 = 300000
+
+# BASE URL
+BASE_URL_BACK_END: http://localhost:${SERVER_PORT}
+BASE_URL_FRONT_END: http://localhost:3000
+

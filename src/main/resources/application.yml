@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: dev
+    active: devops
 
   datasource:
     url: jdbc:mysql://${MYSQL_SQL_HOST}:${MYSQL_SQL_PORT}/${MYSQL_SQL_DB}
