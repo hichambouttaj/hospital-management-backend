@@ -79,7 +79,7 @@ jobs:
           cache: maven
 
       - name: Generate code coverage report
-        run: mvn jacoco:report --file ./path/to/pom.xml
+        run: mvn jacoco:report
 
       - name: Static code analysis with SonarQube
         env:
