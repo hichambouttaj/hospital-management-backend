@@ -49,7 +49,7 @@ jobs:
         status: failure
         fields: repo,message,commit,author
       env:
-        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        SLACK_WEBHOOK: ${{ secrets.SLACK_TOKEN }}
 
     - name: Notify on build success
       if: success()
@@ -58,7 +58,7 @@ jobs:
         status: success
         fields: repo,message,commit,author
       env:
-        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        SLACK_WEBHOOK: ${{ secrets.SLACK_TOKEN }}
 
   analyze:
     runs-on: ubuntu-latest
