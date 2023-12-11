@@ -44,7 +44,7 @@ jobs:
 
     - name: Notify on build failure
       if: failure()
-      uses: Ilshidur/action-slack@2.0.2
+      uses: Ilshidur/action-slack@2.1.0
       with:
         args: "Build failed"
       env:
@@ -52,7 +52,7 @@ jobs:
 
     - name: Notify on build success
       if: success()
-      uses: Ilshidur/action-slack@2.0.2
+      uses: Ilshidur/action-slack@2.1.0
       with:
         args: "Build success"
       env:
