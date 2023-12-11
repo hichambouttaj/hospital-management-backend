@@ -45,18 +45,18 @@ jobs:
     - name: Notify on build failure
       if: failure()
       uses: Ilshidur/action-slack@master
-        with:
-          status: failure
-          fields: repo,message,commit,author
+      with:
+        status: failure
+        fields: repo,message,commit,author
       env:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
 
     - name: Notify on build success
       if: success()
       uses: Ilshidur/action-slack@master
-        with:
-          status: success
-          fields: repo,message,commit,author
+      with:
+        status: success
+        fields: repo,message,commit,author
       env:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
 
