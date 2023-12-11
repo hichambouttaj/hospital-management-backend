@@ -11,7 +11,7 @@ public class QRCode {
     private Long id;
     @Lob
     @Basic(fetch = FetchType.LAZY)
-    @Column(name = "qr_code_image", columnDefinition = "LONGBLOB")
+    @Column(name = "qr_code_image", length = 100000)
     private byte[] qrCodeImage;
 
     public QRCode() {

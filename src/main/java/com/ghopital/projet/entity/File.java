@@ -15,7 +15,7 @@ public class File {
     private String type;
     @Lob
     @Basic(fetch = FetchType.LAZY)
-    @Column(name = "data", columnDefinition = "LONGBLOB", nullable = false)
+    @Column(name = "data", length = 100000, nullable = false)
     private byte[] data;
     public File() {
     }

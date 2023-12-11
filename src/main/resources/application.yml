@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: docker
+    active: dev
 
   datasource:
     url: jdbc:mysql://${MYSQL_SQL_HOST}:${MYSQL_SQL_PORT}/${MYSQL_SQL_DB}
@@ -17,7 +17,7 @@ spring:
         jdbc:
           time_zone: UTC
         globally_quoted_identifiers: true
-#        dialect: org.hibernate.dialect.MySQLDialect
+        dialect: org.hibernate.dialect.MySQLDialect
         format_sql: true
 
 server:
