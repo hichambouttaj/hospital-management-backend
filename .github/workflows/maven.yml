@@ -46,8 +46,7 @@ jobs:
       if: failure()
       uses: Ilshidur/action-slack@2.0.2
       with:
-        status: failure
-        fields: repo,message,commit,author
+        args: "Build failed"
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_TOKEN }}
 
@@ -55,8 +54,7 @@ jobs:
       if: success()
       uses: Ilshidur/action-slack@2.0.2
       with:
-        status: success
-        fields: repo,message,commit,author
+        args: "Build success"
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_TOKEN }}
 
