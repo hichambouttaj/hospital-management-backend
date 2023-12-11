@@ -17,7 +17,8 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: root
           MYSQL_DATABASE: gestion_hopital_db
-          ports: 3306:3306
+        ports:
+          - 3306
 
     steps:
     - uses: actions/checkout@v3
