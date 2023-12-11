@@ -16,6 +16,7 @@ jobs:
       with:
         host port: 3306
         container port: 3306
+        mysql database: gestion_hopital_db
         mysql root password: root
         mysql user: root
     - uses: actions/checkout@v3
