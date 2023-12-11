@@ -10,17 +10,14 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
-    services:
-      mysql:
-        image: mysql:latest
-        env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: gestion_hopital_db
-        ports:
-          - 3306
-
+    
     steps:
+    - uses: mirromutth/mysql-action@v1.1
+      with:
+        host port: 3306
+        container port: 3306
+        mysql root password: root
+        mysql user: root
     - uses: actions/checkout@v3
     - name: Set up JDK 17
       uses: actions/setup-java@v3
@@ -30,5 +27,3 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B clean package
-    - name: Run Tests
-      run: mvn test
