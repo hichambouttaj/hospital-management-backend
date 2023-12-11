@@ -39,8 +39,8 @@ jobs:
     - name: Build with Maven
       run: mvn -B clean verify
 
-    - name: Run tests in parallel
-      run: mvn -B test --jobs 2
+    - name: Run tests
+      run: mvn -B test
 
     - name: Notify on build failure
       if: failure()
