@@ -1,25 +1,25 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
-
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-name: Hospital management backend CI-CD flow
+name: Java CI with Maven
 
 on:
   push:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-
+    types: [opened, synchronize, reopened]
+    
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    
     steps:
+    - uses: mirromutth/mysql-action@v1.1
+      with:
+        host port: 3306
+        container port: 3306
+        mysql database: gestion_hopital_db
+        mysql root password: root
+        mysql user: root
     - uses: actions/checkout@v3
     - name: Set up JDK 17
       uses: actions/setup-java@v3
@@ -28,4 +28,9 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn clean install
+      run: mvn -B clean package
+    - name: Build and analyze
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=hichambouttaj_hospital-management-backend

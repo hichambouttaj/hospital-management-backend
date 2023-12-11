@@ -6,8 +6,8 @@ spring:
       max-request-size: 200MB
 
 #Database
-MYSQL_SQL_USERNAME: ghadmin
-MYSQL_SQL_PASSWORD: ghadmin
+MYSQL_SQL_USERNAME: root
+MYSQL_SQL_PASSWORD: root
 MYSQL_SQL_HOST: localhost
 MYSQL_SQL_PORT: 3306
 MYSQL_SQL_DB: gestion_hopital_db
