@@ -37,10 +37,10 @@ jobs:
         cache: maven
 
     - name: Build with Maven
-      run: mvn -B clean verify --file ./path/to/pom.xml
+      run: mvn -B clean verify
 
     - name: Run tests in parallel
-      run: mvn -B test --file ./path/to/pom.xml --jobs 2
+      run: mvn -B test --jobs 2
 
     - name: Notify on build failure
       if: failure()
