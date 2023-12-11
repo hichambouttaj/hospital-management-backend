@@ -93,6 +93,8 @@ jobs:
     needs: analyze
     if: github.ref == 'refs/heads/master'
     steps:
+      - uses: actions/checkout@v3
+
       - name: Build docker image
         run: |
           docker build -t hichambouttaj/hospital_management_backend:latest .
