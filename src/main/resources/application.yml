@@ -3,7 +3,7 @@ spring:
     active: dev
 
   datasource:
-    url: jdbc:mysql://${MYSQL_SQL_HOST}:${MYSQL_SQL_PORT}/${MYSQL_SQL_DB}
+    url: jdbc:mysql://${MYSQL_SQL_HOST}:${MYSQL_SQL_PORT}/${MYSQL_SQL_DB}?createDatabaseIfNotExist=true
     username: ${MYSQL_SQL_USERNAME}
     password: ${MYSQL_SQL_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
