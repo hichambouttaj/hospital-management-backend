@@ -4,6 +4,6 @@ LABEL authors="HICHAM"
 
 WORKDIR /app
 
-COPY target/hospital_management_backend.jar /app/hospital_management_backend.jar
+COPY hospital_management_backend.jar /app/hospital_management_backend.jar
 
 ENTRYPOINT ["java", "-jar", "hospital_management_backend"]
