@@ -1,0 +1,38 @@
+version: '3.7'
+services:
+  hospital-management-db:
+    container_name: hospital-management-db
+    image: mysql:8.0
+    networks:
+      - pfa-network
+    environment:
+      - MYSQL_DATABASE=gestion_hopital_db
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - db:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    restart: always
+
+  hospital-management-backend:
+    build:
+      context: .
+    container_name: hospital-management-backend
+    image: hichambouttaj/hospital-management-backend:latest
+    ports:
+      - "8080:8080"
+    networks:
+      - pfa-network
+    environment:
+      - MYSQL_SQL_USERNAME=root
+      - MYSQL_SQL_PASSWORD=root
+      - MYSQL_SQL_HOST=hospital-management-db
+      - MYSQL_SQL_PORT=3306
+      - MYSQL_SQL_DB=gestion_hopital_db
+
+networks:
+  pfa-network:
+    name: pfa-network
+
+volumes:
+    db:
