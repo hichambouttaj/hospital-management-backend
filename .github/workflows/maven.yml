@@ -39,9 +39,6 @@ jobs:
     - name: Build with Maven
       run: mvn -B clean verify
 
-    - name: Run tests
-      run: mvn -B test
-
     - name: Notify on build failure
       if: failure()
       uses: Ilshidur/action-slack@2.1.0
